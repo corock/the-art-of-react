@@ -1,11 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 function App() {
-  const name = '리액트';
+  const name = '뤼왝트';
   return (
     <>
-      <h1>{name} 안녕!</h1>
-      <h2>잘 작동하니?</h2>
+      {name === '리액트' ? <h1>리액트입니다.</h1> : <h2>리액트가 아닙니다.</h2>}
     </>
   );
 }
