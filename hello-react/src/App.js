@@ -1,9 +1,11 @@
 import React from 'react';
 
 function App() {
-  const name = '리액트';
-  // return <div>{name === '리액트' ? <h1>리액트입니다.</h1> : null}</div>;
-  return <div>{name === '리액트' && <h1>리액트입니다.</h1>}</div>;
+  const name = undefined;
+  return name || '값이 undefined입니다.';
+
+  // It's okay
+  // return <div>{name}</div>;
 }
 
 export default App;
