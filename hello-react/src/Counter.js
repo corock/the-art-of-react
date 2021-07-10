@@ -1,19 +1,10 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
-  constructor(props) {
-    /**
-     * 현재 클래스형 컴포넌트가 상속하고 있는
-     * 리액트의 Component 클래스가 지닌 생성자 함수 호출
-     */
-    super(props);
-
-    // state 초깃값 설정
-    this.state = {
-      number: 0,
-      fixedNumber: 0
-    };
-  }
+  state = {
+    number: 0,
+    fixedNumber: 0,
+  };
 
   render() {
     // state 를 조회할 때는 this.state 로 조회합니다.
