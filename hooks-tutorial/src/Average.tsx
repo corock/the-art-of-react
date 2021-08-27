@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useMemo, useState } from 'react';
 
 const getAverage = (numbers: Array<number>) => {
   console.log('평균값 계산 중...');
@@ -11,6 +11,7 @@ const Average = () => {
   const [list, setList] = useState<Array<number>>([]);
   const [number, setNumber] = useState('');
 
+  /** @see https://stackoverflow.com/questions/40676343/typescript-input-onchange-event-target-value */
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setNumber(e.target.value);
   };
@@ -19,6 +20,8 @@ const Average = () => {
     setList(nextList);
     setNumber('');
   };
+
+  const avg = useMemo(() => getAverage(list), [list]);
 
   return (
     <div>
@@ -30,7 +33,7 @@ const Average = () => {
         })}
       </ul>
       <div>
-        <b>평균값:</b> {getAverage(list)}
+        <b>평균값:</b> {avg}
       </div>
     </div>
   );
